@@ -1,0 +1,5 @@
+export const DASHBOARD = '/'
+export const SIGNUP = '/signup'
+export const LOGIN = '/accounts/login'
+export const PROFILE = '/:username'
+export const ERROR = '/error'
