@@ -1,21 +1,36 @@
-const colors = require('tailwindcss/colors')
-
 module.exports = {
-  purge: {
-    mode: 'layers',
-    content: ['src/**/*.js', 'src/**/*.html', 'src/**/*.jsx', 'src/**/*.ts', 'src/**/*.tsx']
+  future: {
+    removeDeprecatedGapUtilities: true
   },
-  darkMode: false, // or 'media' or 'class'
+  purge: {
+    content: ['./src/**/*.js', './src/**/**/*.js']
+  },
   theme: {
-    extend: {
-      colors:{
-        blue: colors.lightBlue,
-        gray: colors.trueGray
-      } 
-    },
+    fill: (theme) => ({
+      red: theme('colors.red.primary')
+    }),
+    colors: {
+      white: '#ffffff',
+      blue: {
+        medium: '#005c98'
+      },
+      black: {
+        light: '#262626',
+        faded: '#00000059'
+      },
+      gray: {
+        base: '#616161',
+        background: '#fafafa',
+        primary: '#dbdbdb'
+      },
+      red: {
+        primary: '#ed4956'
+      }
+    }
   },
   variants: {
-    extend: {},
-  },
-  plugins: [],
+    extend: {
+      display: ['group-hover']
+    }
+  }
 }
